@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>gchat-sdk browser example</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+      form { display: grid; gap: 0.5rem; margin-bottom: 1rem; }
+      #log { border: 1px solid #ccc; border-radius: 8px; height: 320px; overflow-y: auto; padding: 0.5rem; }
+      .in { color: #1d4ed8; }
+      .out { color: #15803d; text-align: right; }
+      [hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Gchat</h1>
+
+    <form id="guest">
+      <input name="name" placeholder="Nome" required />
+      <input name="email" type="email" placeholder="E-mail" required />
+      <input name="phone" placeholder="+5511999999999" pattern="\+[1-9]\d{7,14}" required />
+      <button>Entrar como convidado</button>
+    </form>
+
+    <section id="chat" hidden>
+      <div id="log"></div>
+      <form id="composer">
+        <input name="text" placeholder="Mensagem" autocomplete="off" required />
+        <button>Enviar</button>
+        <button type="button" id="finish">Encerrar</button>
+      </form>
+    </section>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

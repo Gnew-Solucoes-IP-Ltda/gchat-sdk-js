@@ -1,0 +1,60 @@
+{
+  "name": "gchat-sdk",
+  "version": "0.1.0",
+  "description": "Gchat SDK for JavaScript and TypeScript: native web chat channel as a guest visitor",
+  "keywords": [
+    "gchat",
+    "gnew",
+    "chat",
+    "widget",
+    "sdk"
+  ],
+  "license": "MIT",
+  "author": "Tatianno Alves <tferreiraalves@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gnew-Solucoes-IP-Ltda/gchat-sdk-js.git"
+  },
+  "homepage": "https://github.com/Gnew-Solucoes-IP-Ltda/gchat-sdk-js#readme",
+  "bugs": {
+    "url": "https://github.com/Gnew-Solucoes-IP-Ltda/gchat-sdk-js/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "example:node": "tsx examples/node-chat.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
